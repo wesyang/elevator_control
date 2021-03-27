@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorControlApi", "ElevatorControlApi\ElevatorControlApi.csproj", "{3792A650-7548-4D70-8559-D672BA47034C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorControlApi.Lib", "ElevatorControlApi.Lib\ElevatorControlApi.Lib.csproj", "{E8B0A09D-505A-4159-9C6A-7411B5D4F65D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BB684C6F-1D4F-4AE4-80D2-A9186B85B1A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3792A650-7548-4D70-8559-D672BA47034C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3792A650-7548-4D70-8559-D672BA47034C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3792A650-7548-4D70-8559-D672BA47034C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3792A650-7548-4D70-8559-D672BA47034C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B0A09D-505A-4159-9C6A-7411B5D4F65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B0A09D-505A-4159-9C6A-7411B5D4F65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B0A09D-505A-4159-9C6A-7411B5D4F65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B0A09D-505A-4159-9C6A-7411B5D4F65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB684C6F-1D4F-4AE4-80D2-A9186B85B1A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB684C6F-1D4F-4AE4-80D2-A9186B85B1A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB684C6F-1D4F-4AE4-80D2-A9186B85B1A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB684C6F-1D4F-4AE4-80D2-A9186B85B1A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

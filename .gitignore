@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+/ElevatorControlApi/obj/Debug/netcoreapp3.1
+/ElevatorControlApi/obj
+/ElevatorControlApi.Lib/obj
+/UnitTests/obj
+/ElevatorControlApi.Lib/bin
+/.vs/ElevatorControlApi/DesignTimeBuild/.dtbcache.v2
+/.vs/ElevatorControlApi/v16/TestStore/0/000.testlog
+/TestResults/*
+/UnitTests/bin/Debug/netcoreapp3.1
+/.vs/ElevatorControlApi/v16/TestStore/0

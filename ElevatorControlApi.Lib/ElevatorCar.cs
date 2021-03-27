@@ -10,11 +10,11 @@ namespace ElevatorControlApi.Lib
     public class ElevatorCar : IElevatorCar, IElevatorController
     {
         /// <summary>
-        ///  create ElevatorCar object 
+        ///  Create ElevatorCar object 
         ///  
         ///  Notes:
         ///  this is not Thread Safe Object.
-        ///  (todo) Update implimentation to Thread Safe if it's required
+        ///  (todo) Update implementation to Thread Safe if it's required
         ///  
         /// </summary>
         /// <param name="configuraiton">inject configuration</param>
@@ -37,7 +37,9 @@ namespace ElevatorControlApi.Lib
         private ElevatorDirection Direction { get;  set; }
 
         /// <summary>
-        /// ElevatorCar maintain this list in an sorted order
+        /// Collection of all floor-stop request objects
+        /// 
+        /// Note: maintain this list in an sorted order
         /// </summary>
         private List<FloorStopRequest> FloorStopRequests { get; }
 
@@ -77,8 +79,8 @@ namespace ElevatorControlApi.Lib
         /// <summary>
         /// An elevator car requests all floors that it’s current passengers are servicin
         /// </summary>
-        /// <returns></returns>
-        public IEnumerable<FloorInfo> GetAllFloorStopPassengerRequests()
+        /// <returns>collection of FloorInfo abject</returns>
+        public IEnumerable<FloorInfo> GetAllFloorStopsPassengerRequested()
         {
             var result = from c in this.FloorStopRequests
                          where (c.StopType & FloorStopType.RequestByPassenger) == FloorStopType.RequestByPassenger
@@ -110,11 +112,13 @@ namespace ElevatorControlApi.Lib
 
             if (this.Direction == ElevatorDirection.Down && !downFloors.Any())
             {
+                // change direct since there is no more lower floor need to stop
                 this.Direction = ElevatorDirection.Up;
             }
 
             if (this.Direction == ElevatorDirection.Up && !upFloors.Any())
             {
+                // change direct since there is no more higer floor need to stop
                 this.Direction = ElevatorDirection.Down;
             }
 
@@ -127,12 +131,18 @@ namespace ElevatorControlApi.Lib
         public void MoveToNextStop()
         {
             var floor = this.NextStop();
+            if (floor == null)
+            {
+                return;
+            }
 
             int count = this.FloorStopRequests.Count;
             for (int idx = 0; idx < count; idx++)
             {
                 if (this.FloorStopRequests[idx].Floor.FloorNumber == floor.FloorNumber)
                 {
+                    this.CurrentFloor = this.FloorStopRequests[idx].Floor;
+
                     this.FloorStopRequests.RemoveAt(idx);
                     return;
                 }

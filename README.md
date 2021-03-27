@@ -1,2 +1,2 @@
-# eleveator_control
+# elevator_control
 coding exercise project
